@@ -1,10 +1,11 @@
 package com.vti.frontend;
 
-import com.vti.backend.menu;
+import com.vti.entity.Student;
 
 public class main {
 	public static void main(String[] args) {
-		menu a = new menu();
-		a.menu();
+		Student	a = new Student();
+		a.inputInfo();
+		a.showInfo();
 	}
 }

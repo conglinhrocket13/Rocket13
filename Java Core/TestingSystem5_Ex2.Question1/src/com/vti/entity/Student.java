@@ -1,5 +1,6 @@
 package com.vti.entity;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Student implements  IStudent {
@@ -7,9 +8,11 @@ public class Student implements  IStudent {
 	private String name;
 	private int group;
 	public Scanner sc;
+	public Random random;
 	
 	public Student() {
 		sc = new Scanner(System.in);
+		random = new Random();
 	}
 	
 	public Student(int id, String name, int group) {
@@ -49,13 +52,13 @@ public class Student implements  IStudent {
 	}
 
 	@Override
-	public void Lesson() {
+	public void Study() {
 		System.out.println(name+" đang học bài");
 		
 	}
 
 	@Override
-	public void CleanUp() {
+	public void Cleaning() {
 		System.out.println(name+" đi dọn vệ sinh");
 		
 	}
@@ -63,9 +66,7 @@ public class Student implements  IStudent {
 
 		System.out.print("Nhập tên  : ");
 		name = sc.nextLine();
-		System.out.print("Nhập nhóm : ");
-		group = sc.nextInt();
-		sc.nextLine();
+		group = random.nextInt(3)+1;
 	}
 	
 }

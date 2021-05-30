@@ -4,7 +4,7 @@ public interface IStudent {
 	
 	public void RollUp();
 	
-	public void Lesson();
+	public void Study();
 	
-	public void CleanUp();
+	public void Cleaning();
 }
