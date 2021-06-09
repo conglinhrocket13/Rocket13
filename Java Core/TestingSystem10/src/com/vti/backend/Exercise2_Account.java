@@ -24,20 +24,20 @@ public class Exercise2_Account {
 	
 	public void question1() throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
 		list = accDAQ.getListAccount();
-		String leftAlignFormat = "| %-2d | %-21s | %-15s | %-21s | %-14s | %-16s | %-16s | %n";
+		String leftAlignFormat = "| %-2d | %-21s | %-15s | %-21s | %-21s | %-21s | %-16s | %n";
 		System.out.format(
-				"+----+-----------------------+-----------------+-----------------------+----------------+------------------+------------------+%n");
+				"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
 		System.out.format(
-				"|ID  | Email                 | Username        |   FullName            | Department     | Position         | Create Date      |%n");
+				"|ID  | Email                 |   Username      |     FullName          |     Department        |     Position          | Create Date      |%n");
 		System.out.format(
-				"+----+-----------------------+-----------------+-----------------------+----------------+------------------+------------------+%n");
+				"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
 
 		for (Account acc : list) {
 			System.out.format(leftAlignFormat, acc.getId(), acc.getEmail(), acc.getUsername(), acc.getFullname(),
-					acc.getDepartment(), acc.getPosition(), acc.getCreateDate());
+					acc.getDepartment().getName(), acc.getPosition().getName(), acc.getCreateDate());
 		}
 		System.out.format(
-				"+----+-----------------------+-----------------+-----------------------+----------------+------------------+------------------+%n");
+				"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
 
 	}
 	
@@ -45,19 +45,19 @@ public class Exercise2_Account {
 		System.out.println("Tìm thông tin Account có ID =5");
 		Account acc2 = accDAQ.getAccByID(5);
 		if (acc2 != null) {
-			String leftAlignFormat = "| %-2d | %-21s | %-15s | %-21s | %-14s | %-16s | %-16s | %n";
+			String leftAlignFormat = "| %-2d | %-21s | %-15s | %-21s | %-21s | %-21s | %-16s | %n";
 			System.out.format(
-					"+----+-----------------------+-----------------+-----------------------+----------------+------------------+------------------+%n");
+					"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
 			System.out.format(
-					"|ID  | Email                 | Username        |   FullName            | Department     | Position         | Create Date      |%n");
+					"|ID  | Email                 |   Username      |     FullName          |     Department        |     Position          | Create Date      |%n");
 			System.out.format(
-					"+----+-----------------------+-----------------+-----------------------+----------------+------------------+------------------+%n");
+					"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
 
 			System.out.format(leftAlignFormat, acc2.getId(), acc2.getEmail(), acc2.getUsername(), acc2.getFullname(),
-					acc2.getDepartment(), acc2.getPosition(), acc2.getCreateDate());
+					acc2.getDepartment().getName(), acc2.getPosition().getName(), acc2.getCreateDate());
 
 			System.out.format(
-					"+----+-----------------------+-----------------+-----------------------+----------------+------------------+------------------+%n");
+					"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
 
 		} else {
 			System.out.println("Account không tồn tại!");
@@ -71,19 +71,19 @@ public class Exercise2_Account {
 		int idFind = ScannerUltis.inputIntPositive();
 		Account acc2 = accDAQ.getAccByID(idFind);
 		if (acc2 != null) {
-			String leftAlignFormat = "| %-2d | %-21s | %-15s | %-21s | %-14s | %-16s | %-16s | %n";
+			String leftAlignFormat = "| %-2d | %-21s | %-15s | %-21s | %-21s | %-21s | %-16s | %n";
 			System.out.format(
-					"+----+-----------------------+-----------------+-----------------------+----------------+------------------+------------------+%n");
+					"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
 			System.out.format(
-					"|ID  | Email                 | Username        |   FullName            | Department     | Position         | Create Date      |%n");
+					"|ID  | Email                 |   Username      |     FullName          |     Department        |     Position          | Create Date      |%n");
 			System.out.format(
-					"+----+-----------------------+-----------------+-----------------------+----------------+------------------+------------------+%n");
+					"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
 
 			System.out.format(leftAlignFormat, acc2.getId(), acc2.getEmail(), acc2.getUsername(), acc2.getFullname(),
 					acc2.getDepartment(), acc2.getPosition(), acc2.getCreateDate());
 
 			System.out.format(
-					"+----+-----------------------+-----------------+-----------------------+----------------+------------------+------------------+%n");
+					"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
 
 		} else {
 			System.out.println("Account không tồn tại!S");
