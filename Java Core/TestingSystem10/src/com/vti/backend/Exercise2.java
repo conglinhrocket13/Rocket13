@@ -6,17 +6,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.vti.entity.Department;
-import com.vti.entity.DepartmentDAQ;
+import com.vti.entity.DepartmentDAO;
 import com.vti.ultis.ScannerUltis;
 
 public class Exercise2 {
 	private static ArrayList<Department> list;
-	private DepartmentDAQ dept;
+	private DepartmentDAO dept;
 	private ScannerUltis sc;
 	
 	public Exercise2() throws FileNotFoundException, IOException {
 		list = new ArrayList<Department>();
-		dept = new DepartmentDAQ();
+		dept = new DepartmentDAO();
 		sc = new ScannerUltis();
 	}
 

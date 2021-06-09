@@ -6,24 +6,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.vti.entity.Account;
-import com.vti.entity.AccountDAQ;
+import com.vti.entity.AccountDAO;
 import com.vti.entity.Department;
-import com.vti.entity.DepartmentDAQ;
+import com.vti.entity.DepartmentDAO;
 import com.vti.ultis.ScannerUltis;
 
 public class Exercise2_Account {
 	private static ArrayList<Account> list;
-	private AccountDAQ accDAQ;
+	private AccountDAO accDAO;
 	private ScannerUltis sc;
 	
 	public Exercise2_Account() throws FileNotFoundException, IOException {
 		list = new ArrayList<Account>();
-		accDAQ = new AccountDAQ();
+		accDAO = new AccountDAO();
 		sc = new ScannerUltis();
 	}
 	
 	public void question1() throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
-		list = accDAQ.getListAccount();
+		list = accDAO.getListAccount();
 		String leftAlignFormat = "| %-2d | %-21s | %-15s | %-21s | %-21s | %-21s | %-16s | %n";
 		System.out.format(
 				"+----+-----------------------+-----------------+-----------------------+-----------------------+-----------------------+------------------+%n");
@@ -43,7 +43,7 @@ public class Exercise2_Account {
 	
 	public void question2() throws ClassNotFoundException, FileNotFoundException, SQLException, IOException {
 		System.out.println("Tìm thông tin Account có ID =5");
-		Account acc2 = accDAQ.getAccByID(5);
+		Account acc2 = accDAO.getAccByID(5);
 		if (acc2 != null) {
 			String leftAlignFormat = "| %-2d | %-21s | %-15s | %-21s | %-21s | %-21s | %-16s | %n";
 			System.out.format(
@@ -69,7 +69,7 @@ public class Exercise2_Account {
 		System.out.println("Tìm kiếm Account theo ID: ");
 		System.out.println("Nhập vào ID cần tìm kiếm: ");
 		int idFind = ScannerUltis.inputIntPositive();
-		Account acc2 = accDAQ.getAccByID(idFind);
+		Account acc2 = accDAO.getAccByID(idFind);
 		if (acc2 != null) {
 			String leftAlignFormat = "| %-2d | %-21s | %-15s | %-21s | %-21s | %-21s | %-16s | %n";
 			System.out.format(
@@ -94,7 +94,7 @@ public class Exercise2_Account {
 		System.out.println("Kiểm tra tên account đã có trên hệ thông? ");
 		System.out.println("Nhập vào tên cần kiểm tra: ");
 		String nameCheck = ScannerUltis.inputString();
-		Boolean checkResult = accDAQ.isAccNameExists(nameCheck);
+		Boolean checkResult = accDAO.isAccNameExists(nameCheck);
 		if (checkResult) {
 			System.out.println("Tên tài khoản đã có trên hệ thống.");
 			question1();

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 
 import com.vti.ultis.jdbcUltis;
 
-public class PositionDAQ {
+public class PositionDAO {
 	private jdbcUltis jdbc;
 
-	public PositionDAQ() throws FileNotFoundException, IOException {
+	public PositionDAO() throws FileNotFoundException, IOException {
 		jdbc = new jdbcUltis();
 	}
 

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 
 import com.vti.ultis.jdbcUltis;
 
-public class DepartmentDAQ {
+public class DepartmentDAO {
 	private jdbcUltis jdbc;
 	
-	public DepartmentDAQ() throws FileNotFoundException, IOException {
+	public DepartmentDAO() throws FileNotFoundException, IOException {
 		jdbc = new jdbcUltis();
 	}
 	

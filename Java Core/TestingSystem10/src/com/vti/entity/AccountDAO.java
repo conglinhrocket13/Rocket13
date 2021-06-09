@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import com.vti.ultis.ScannerUltis;
 import com.vti.ultis.jdbcUltis;
 
-public class AccountDAQ {
+public class AccountDAO {
 	private jdbcUltis jdbc;
 
-	public AccountDAQ() throws FileNotFoundException, IOException {
+	public AccountDAO() throws FileNotFoundException, IOException {
 		jdbc = new jdbcUltis();
 	}
 	
@@ -31,11 +31,11 @@ public class AccountDAQ {
 			acc.setUsername(resultSet.getString(3));
 			acc.setFullname(resultSet.getString(4));
 
-			DepartmentDAQ depDao = new DepartmentDAQ();
+			DepartmentDAO depDao = new DepartmentDAO();
 			Department dep = depDao.getDepByID(resultSet.getInt(5));
 			acc.setDepartment(dep);
 			
-			PositionDAQ posDao = new PositionDAQ();
+			PositionDAO posDao = new PositionDAO();
 			Position pos = posDao.getPosByID(resultSet.getInt(6));
 			acc.setPosition(pos);
 
@@ -58,10 +58,10 @@ public class AccountDAQ {
 			acc.setEmail(resultSet.getString(2));
 			acc.setUsername(resultSet.getString(3));
 			acc.setFullname(resultSet.getString(4));
-			DepartmentDAQ depDao = new DepartmentDAQ();
+			DepartmentDAO depDao = new DepartmentDAO();
 			Department dep = depDao.getDepByID(resultSet.getInt(5));
 			acc.setDepartment(dep);
-			PositionDAQ posDao = new PositionDAQ();
+			PositionDAO posDao = new PositionDAO();
 			acc.setPosition(posDao.getPosByID(resultSet.getInt(6)));
 			LocalDate lcd = Date.valueOf(resultSet.getDate(7).toString()).toLocalDate();
 			acc.setCreateDate(lcd);
