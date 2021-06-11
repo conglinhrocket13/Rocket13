@@ -23,5 +23,8 @@ public class Program2 {
 //		b.question2();
 //		b.question3();
 //		b.question4();
+//		b.question5();
+//		b.question6();
+//		b.question7();
 	}		
 }
