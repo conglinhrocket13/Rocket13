@@ -1,0 +1,41 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#container{
+    font-size: 16px;
+    margin-left: 20px;
+    line-height: 24px;
+}
+
+#header{
+    padding-top: 15px;
+    padding-bottom:15px;
+}
+
+#description{
+    padding-top: 15px;
+    padding-bottom:15px;
+    border-top: 1px dashed lightgray;
+    border-bottom: 1px dashed lightgray;
+}
+
+#ul_div ul{
+    color: orange;
+    padding-left: 30px;
+}
+
+.picture{
+    width: 620px;
+}
+
+.picture .img_div{
+    margin: 0 0 0 0;
+}
+
+.picture .note{
+    background-color: lightgray;
+    margin-top:-6px;
+    padding: 5px 5px 5px 5px;
+}
